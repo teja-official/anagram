@@ -7,14 +7,11 @@ for i in l1:
     if len(j)==4:
         l2.append(j)
 l2 = list(set(l2))
-def rotate(input,d): 
-    Lfirst = input[0 : d] 
-    Lsecond = input[d :] 
-    return Lsecond + Lfirst
 
 anagrams = []
 import itertools
 for a, b in itertools.combinations(l2, 2):
+    print(a, b)
     if set(list(a.lower()))==set(list(b.lower())):
         anagrams.extend([a, b])
 print(",".join(sorted(list(set(anagrams)), key=str.lower)))
